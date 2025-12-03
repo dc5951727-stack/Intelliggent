@@ -81,7 +81,7 @@
         .prose-content p {
             font-family: 'Merriweather', serif;
             font-size: 1.15rem;
-            line-height: 2;
+            line-height: 2; /* Mucho espacio entre líneas para leer bien */
             margin-bottom: 2rem;
             color: #d4d4d4;
             text-align: justify;
@@ -125,9 +125,9 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // ===========================================
+        // ===================================
         // BASE DE DATOS MASIVA (MUCHO TEXTO)
-        // ===========================================
+        // ===================================
         const DB = [
             {
                 id: 1,
@@ -140,7 +140,7 @@
                     <h3>Introducción al Paradigma Conexionista</h3>
                     <p>Para comprender verdaderamente la Inteligencia Artificial moderna, debemos abandonar la idea de la programación tradicional. En la computación clásica, un programador humano escribe reglas explícitas: "Si sucede X, entonces haz Y". Este enfoque, conocido como sistemas simbólicos, dominó la IA durante décadas, pero fracasó estrepitosamente al intentar tareas que para los humanos son triviales, como reconocer la cara de una madre o entender un chiste.</p>
                     <p>La solución vino de la biología. El cerebro humano no sigue reglas lineales; opera mediante una red masiva de neuronas interconectadas que se disparan en patrones. Las <strong>Redes Neuronales Artificiales (ANN)</strong> imitan esta estructura utilizando matemáticas avanzadas, específicamente álgebra lineal y cálculo diferencial.</p>
-                    
+
                     <h3>Arquitectura de una Red Profunda</h3>
                     <p>Una red neuronal no es un bloque monolítico, sino una estructura en capas (de ahí el término "Deep Learning" o Aprendizaje Profundo). Analicemos sus componentes con detalle:</p>
                     <ul>
@@ -215,6 +215,31 @@
                     </ul>
                     <p>Lo único seguro es que, si ocurre, será el último invento que la humanidad necesite hacer.</p>
                 `
+            },
+            {
+                id: 5,
+                size: "wide",
+                category: "Transformación Académica",
+                title: "El Uso de la Inteligencia Artificial en el Entorno Educativo",
+                subtitle: "De la estandarización a la hiper-personalización del aprendizaje.",
+                img: "https://image.pollinations.ai/prompt/futuristic%20classroom%20holograms%20students%20learning%20cyberpunk%20style?width=1200&height=600&nologo=true",
+                content: `
+                    <h3>La Muerte de la Educación Estandarizada</h3>
+                    <p>Durante los últimos 200 años, el modelo educativo global ha seguido un esquema industrial: un profesor transmite la misma información a 30 alumnos, al mismo ritmo y con los mismos métodos de evaluación. Este enfoque "talla única" (one size fits all) ignora fundamentalmente la neurodiversidad humana. Algunos estudiantes son visuales, otros aprenden haciendo; algunos dominan las matemáticas en semanas, otros necesitan meses.</p>
+                    <p>La Inteligencia Artificial promete romper este esquema mediante la <strong>Hiper-personalización</strong>. Herramientas como tutores inteligentes (Sistemas de Tutoría Inteligente - ITS) pueden analizar en tiempo real dónde se atasca un estudiante. Si un alumno no entiende una ecuación cuadrática, la IA no se limita a repetirla; puede reformular la explicación usando una analogía de fútbol, videojuegos o música, basándose en los intereses del alumno.</p>
+
+                    <h3>El Rol del Nuevo Docente</h3>
+                    <p>Existe el temor de que la IA reemplace a los maestros. Sin embargo, el escenario más probable y beneficioso es la "Cyborg-ización" de la docencia. La IA se encarga de las tareas repetitivas y administrativas:</p>
+                    <ul>
+                        <li><strong>Calificación Automática:</strong> No solo de exámenes tipo test, sino de ensayos complejos, analizando estructura, gramática y argumentación en segundos.</li>
+                        <li><strong>Planificación de Lecciones:</strong> Generación instantánea de materiales didácticos, diapositivas y ejercicios personalizados para cada nivel de la clase.</li>
+                    </ul>
+                    <p>Esto libera al profesor humano para hacer lo que la máquina no puede: ser un mentor emocional, inspirar curiosidad, gestionar dinámicas sociales y fomentar el pensamiento crítico. El profesor pasa de ser un "transmisor de datos" a un "facilitador de sabiduría".</p>
+
+                    <h3>Desafíos Éticos y Plagio</h3>
+                    <p>La irrupción de ChatGPT ha generado pánico sobre la "muerte del ensayo". Si una máquina puede escribir una tesis en 10 segundos, ¿cómo evaluamos el aprendizaje? La respuesta no es prohibir la IA (lo cual es imposible), sino cambiar la evaluación.</p>
+                    <p>El sistema educativo debe evolucionar de evaluar el <em>producto final</em> (el ensayo escrito) a evaluar el <em>proceso</em>. Los exámenes orales, los debates en tiempo real y el aprendizaje basado en proyectos se volverán la norma. Además, debemos enseñar a los estudiantes a usar la IA como un "copiloto cognitivo". En el futuro laboral, no se les pedirá que escriban un informe desde cero, se les pedirá que dirijan a una IA para generar el mejor informe posible y luego verifiquen su veracidad. La alfabetización en IA (AI Literacy) será tan importante como saber leer y escribir.</p>
+                `
             }
         ];
 
@@ -225,7 +250,7 @@
         const Icons = {
             Power: () => <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>,
             Close: () => <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/></svg>,
-            QR: () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v1m6 11h2m-6 0h-2v4h2v-4m-9 4h4"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+            QR: () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v1m6 11h2m-6 0h-2v4h2v-4zM5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
         }
 
         // PANTALLA DE INICIO (SPLASH SCREEN PRO)
@@ -233,15 +258,15 @@
             return (
                 <div className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center overflow-hidden">
                     <div className="scanline"></div>
-
+                    
                     {/* Fondo animado sutil */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-cyan-900/20 via-black to-black"></div>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-cyan-900/20 via-black to-black"></div>
 
                     <div className="relative z-10 text-center p-8 animate-fade-in-up">
                         <div className="mb-8 inline-block p-6 rounded-full border border-cyan-500/30 bg-cyan-900/10 shadow-[0_0_50px_rgba(0,243,255,0.2)]">
                             <Icons.Power />
                         </div>
-
+                        
                         <h1 className="text-5xl md:text-8xl font-display font-bold text-white mb-2 tracking-widest uppercase">
                             NeuroNexus
                         </h1>
@@ -256,11 +281,11 @@
                             <span className="absolute inset-0 w-full h-full bg-cyan-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></span>
                             Iniciar Sistema
                         </button>
-
-                        <div className="mt-16 text-gray-600 text-xs font-mono">
-                            AUTHORIZED ACCESS ONLY <br/>
-                            ID: DIEGO-CHAVEZ-ORTIZ
-                        </div>
+                    </div>
+                    
+                    <div className="mt-16 text-gray-600 text-xs font-mono">
+                        AUTHORIZED ACCESS ONLY <br/>
+                        ID: DIEGO-CHAVEZ-ORTIZ
                     </div>
                 </div>
             );
@@ -340,58 +365,38 @@
                                 <img src={item.img} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-60 group-hover:opacity-100" />
                                 
                                 <div className="absolute bottom-0 left-0 p-8 z-20 w-full bg-gradient-to-t from-black via-black/80 to-transparent">
-                                    <span className="text-cyan-500 text-xs font-mono uppercase tracking-widest mb-2 block opacity-70 group-hover:opacity-100 transition-opacity">{item.category}</span>
-                                    <h3 className="text-2xl md:text-3xl font-display text-white mb-2 group-hover:text-cyan-50 transition-colors">{item.title}</h3>
-                                    <p className="text-gray-400 font-serif text-sm line-clamp-2 group-hover:text-white transition-colors">{item.subtitle}</p>
-                                    
-                                    <div className="mt-4 text-cyan-400 text-xs font-mono uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                                        [ LEER ENSAYO COMPLETO ]
-                                    </div>
+                                    <span className="text-cyan-400 text-xs font-mono uppercase tracking-widest mb-2 block">{item.category}</span>
+                                    <h3 className="text-2xl font-display text-white group-hover:text-cyan-200 transition-colors">{item.title}</h3>
                                 </div>
                             </div>
                         ))}
                     </div>
-
-                    <footer className="mt-20 text-center text-gray-600 font-mono text-xs">
-                        NEURONEXUS SYSTEM v6.0 <br/>
-                        CREATED BY DIEGO CHÁVEZ ORTIZ
-                    </footer>
                 </div>
             );
         }
 
-        // APP PRINCIPAL (CONTROLADOR)
+        // APP PRINCIPAL
         function App() {
             const [started, setStarted] = useState(false);
             const [selectedItem, setSelectedItem] = useState(null);
-            const [showQR, setShowQR] = useState(false);
 
             if (!started) {
                 return <SplashScreen onStart={() => setStarted(true)} />;
             }
 
             return (
-                <div>
-                    <MainGrid onItemClick={setSelectedItem} onQRClick={() => setShowQR(true)} />
-                    
+                <>
+                    <MainGrid 
+                        onItemClick={setSelectedItem} 
+                        onQRClick={() => alert("Generando QR de acceso...")} 
+                    />
                     {selectedItem && (
-                        <ArticleModal item={selectedItem} onClose={() => setSelectedItem(null)} />
+                        <ArticleModal 
+                            item={selectedItem} 
+                            onClose={() => setSelectedItem(null)} 
+                        />
                     )}
-
-                    {showQR && (
-                        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 p-4" onClick={() => setShowQR(false)}>
-                            <div className="bg-white p-8 max-w-sm text-center">
-                                <h2 className="text-black font-display font-bold text-2xl mb-4">NeuroNexus Mobile</h2>
-                                <img 
-                                    src={`https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(window.location.href)}&color=000000&bgcolor=ffffff`}
-                                    className="w-full h-auto border-4 border-black mb-4"
-                                />
-                                <p className="font-mono text-xs text-black">ESCANEAR PARA ACCESO REMOTO</p>
-                                <p className="font-mono text-xs text-gray-500 mt-2">Diego Chávez Ortiz</p>
-                            </div>
-                        </div>
-                    )}
-                </div>
+                </>
             );
         }
 
